@@ -9,7 +9,12 @@ node(label: 'MAVEN') {
   }
 
   stage('Artifacs'){
-		archiveArtifacts '/target/*.jar'
+		archiveArtifacts 'target/*.jar'
+        junit 'target\\surefire-reports\\*.xml'
+  }
+
+    stage('TestResults'){
+        junit 'target\\surefire-reports\\*.xml'
   }
 
 }
