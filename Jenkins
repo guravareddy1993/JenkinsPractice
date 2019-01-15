@@ -5,8 +5,7 @@ node(label: 'MAVEN') {
   }
 
   stage('MAVAN'){
-		sh '''cd  spring-petclinic/
-		mvn clean package'''
+		sh 'mvn clean package'
   }
 
   stage('Artifacs'){
